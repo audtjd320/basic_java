@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>main</title>
+		<link rel="stylesheet" type="text/css" href="./css/css.css">
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script>
+			function func1(){
+				alert("검색어를 입력해 주세요.");
+			}
+			
+			$(document).ready(function(){
+				
+				$(document).on("mouseover","#navList", function(){
+					
+ 					if($("#panel").css("display") == "none"){
+						$("#panel").slideDown(300);
+					}else{
+						$("#panel").slideUp();
+					} 
+				});
+			});
+			
+ 			function zooms() {
+				document.body.style.zoom = nowZoom + '%';
+			}
+ 				
+ 			var nowZoom = 100;
+ 			function zoomIn(){
+				nowZoom = nowZoom + 10;
+					if(nowZoom >= 500) nowZoom = 500;
+					
+				document.body.style.zoom = nowZoom + '%';
+			} 
+ 			
+ 			function zoomReset(){
+ 				nowZoom = 100;
+ 				zooms();
+ 				
+				document.body.style.zoom = nowZoom + '%';
+ 			}
+ 			
+ 			function zoomOut() {
+				nowZoom = nowZoom - 10;
+					if(nowZoom <= 70) nowZoom = 70;
+
+				document.body.style.zoom = nowZoom + '%';
+			}
+ 			
+		</script>
+		<style>
+			#panel{
+				text-align:center;
+				padding:5px;
+				background-color: white;
+				border:1px solid #c3c3c3;
+				cursor:pointer;
+				margin: 0;
+  				padding: 0;
+			}
+			#panel ul li{
+				list-style:none;
+				margin:0 30px;
+			}
+			
+			#panel ul li a{
+				color:#555555;
+			}
+			#panel ul li a:hover{
+				color:blue;
+			}
+			
+			
+			#panel{
+				 display:none; 
+				 position : absolute;
+   				 width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="headerWrap">
+				<div id="header">
+					<div id="leftHeader">
+						<ul>
+							<li><a href="http://www.moef.go.kr/" target="_blank">&nbsp;&nbsp;기획재정부</a></li>
+							<li><a href="https://job.alio.go.kr/main.do" target="_blank">&nbsp;&nbsp;JOB-ALIO</a></li>
+							<li class="lastLeftHeader"><a href="http://www.alioplus.go.kr/" target="_blank">&nbsp;&nbsp;ALIOPLUS</a></li>
+						</ul>
+					</div>
+					<div id="rightHeader">
+						<ul>
+							<li>
+								<span>글자크기&nbsp;</span>
+								<a href="#" onclick="zoomIn();"><img src="./img/btn_font_up.gif" alt="btn_font_up"></a><a href="#" onclick="zoomReset();"><img src="./img/btn_font_basics.gif" alt="btn_font_basics"></a><a href="#" onclick="zoomOut();"><img src="./img/btn_font_down.gif" alt="btn_font_down"></a> 
+							</li>
+							<li class="lastRightHeader"><a href="http://www.alio.go.kr/home.do">HOME</a></li>
+							<li class="lastRightHeader"><a href="http://www.alio.go.kr/guideSitemap.do">사이트맵</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="nav">
+					<div id="navLogo">
+						<a href="http://www.alio.go.kr/home.do"><img src="./img/img_top_logo.gif" alt="img_top_logo"></a>
+					</div>
+					<div id="navList">
+						<ul>
+							<li class="nav_list2"><a href="http://www.alio.go.kr/alioIntroduce.do">알리오안내</a></li>
+							<li class="nav_list1"><a href="http://www.alio.go.kr/managementItem.do">경영공시</a></li>
+							<li class="nav_list1"><a href="http://www.alio.go.kr/statisticsStat1.do">통계</a></li>
+							<li class="nav_list1"><a href="http://www.alio.go.kr/etcLaw.do">기타정보</a></li>
+						</ul>
+					</div>
+					<div id="navSearch">
+						<input type="text" id="input">
+						<img src="./img/btn_search.gif" id="navSearch_btn" onclick="func1();" alt="btn_search"> 
+					</div>
+				</div>
+			</div>
+			
+			<div id="panel" class="panel">
+				<div>
+					<ul class="menu" >
+						<!-- <img src="./img/bg_gnb_m1.gif"> -->
+						<li id="m1"><span>알리오안내</span></li>
+						<li><a href="http://www.alio.go.kr/alioIntroduce.do">ALIO 소개</a></li>
+						<li><a href="http://www.alio.go.kr/alioSystem.do">경영공시 제도</a></li>
+						<li><a href="http://www.alio.go.kr/alioPresent.do">공공기관 현황</a></li>
+						<li><a href="http://www.alio.go.kr/alioUseinfo1.do">이용안내</a></li>
+					</ul>
+					<ul class="menu">
+						<!-- <img src="./img/bg_gnb_m2.gif"> -->
+						<li id="m2"><span>경영공시</span></li>
+						<li><a href="http://www.alio.go.kr/managementItem.do">항목별 공시</a></li>
+						<li><a href="http://www.alio.go.kr/managementOrgan.do">기관별 공시</a></li>
+						<li><a href="http://www.alio.go.kr/informationRecruit.do">주요 수시공시</a></li>
+						<li><a href="http://www.alio.go.kr/managementToday.do">최근 공시</a></li>
+					</ul>
+					<ul class="menu">
+						<!-- <img src="./img/bg_gnb_m3.gif"> -->
+						<li id="m3"><span>통계</span></li>
+						<li><a href="http://www.alio.go.kr/statisticsStat1.do">주요통계</a></li>
+						<li><a href="http://www.alio.go.kr/statisticsSearch.do">통계검색</a></li>
+						<li><a href="http://www.alio.go.kr/statisticsDown.do">통계 다운로드</a></li>
+					</ul>
+					<ul class="menu" id="menu_end">
+						<!-- <img src="./img/bg_gnb_m4.gif"> -->
+						<li id="m4" class="nono"><span>기타정보</span></li>
+						<li class="nono"><a href="http://www.alio.go.kr/etcLaw.do">공공기관 법령/지침</a></li>
+						<li class="nono"><a href="http://www.alio.go.kr/etcPds.do">공공정책자료</a></li>
+						<li class="nono"><a href="http://www.alio.go.kr/etcEtcinfo.do">기타정보공개</a></li>
+						<li class="nono"><a href="http://www.alio.go.kr/etcPubdown.do">기타정보공개</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="clear"></div>
+			<div id="contents">
+				<div id="c1"><img src="./img/main_02.jpeg" alt="main_02"></div>
+				<div id="c2">
+					<div class="c2_wrap">
+						<ul>
+							<li class="c2_list1"><a href="http://www.alio.go.kr/managementItem.do"><img src="./img/항목별공시.png" alt="항목별공시"></a></li>
+							<li class="c2_list"><a href="http://www.alio.go.kr/managementOrgan.do"><img src="./img/기관별공시.png" alt="기관별공시"></a></li>
+							<li class="c2_list"><a href="http://www.alio.go.kr/statisticsSearch.do"><img src="./img/통계검색.png" alt="통계검색"></a></li>
+							<li class="c2_list"><a href="http://www.alio.go.kr/alioPresent.do"><img src="./img/공공기관현황.png" alt="공공기관현황"></a></li>
+							<li class="c2_list2">
+								<a href="http://www.alioplus.go.kr/" target="_blank"><img src="./img/알리오플러스.png" class="img1" alt="알리오플러스"></a>
+								<img src="./img/icon_n06.gif" class="img2" alt="icon_n06">
+							</li>
+							<li class="c2_list3"><a href="https://www.clean.go.kr/index.do" target="_blank"><img src="./img/부패행위채용비리신고.gif" alt="부패행위채용비리신고"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="c3">
+					<div id="section1">
+						<img src="./img/crossline_02.png" alt="crossline_02">
+						<ul>
+							<li><a href="http://www.alio.go.kr/statisticsStat1.do" target="_self"><img src="./img/임직원현황.png" alt="임직원현황"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat3.do" target="_self"><img src="./img/신규채용현황.png" alt="신규채용현황"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat4.do" target="_self"><img src="./img/임원평균연봉.png" alt="임원평균연봉"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat5.do" target="_self"><img src="./img/직원평균보수.png" alt="직원평균보수"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat6.do" target="_self"><img src="./img/복리후생비.png" alt="복리후생비"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat7.do" target="_self"><img src="./img/부채정보.png" alt="부채정보"></a></li>
+						</ul>
+					</div>
+					<div id="section2">
+						<div class="div">
+							<h3>최근공시</h3>  <p><a href="http://www.alio.go.kr/managementToday.do"><img src="./img/more.gif" alt="more"></a></p>
+							<ul>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917217&disclosureNo=2019102401917217">제34차 핵안보자문회의 ‥</a><span>2019.10.22</span></li>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917218&disclosureNo=2019102401917218">임원 국외출장정보(상임‥</a><span>2019.10.22</span></li>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917201&disclosureNo=2019102401917201">클린사업장 조성지원사‥</a><span>2019.10.22</span></li>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917194&disclosureNo=2019102401917194">제127차 이사회 회의‥</a><span>2019.10.22</span></li>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917195&disclosureNo=2019102401917195">2019년도 제10회 ‥</a><span>2019.10.22</span></li>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917221&disclosureNo=2019102401917221">2019년 제3차 노사‥</a><span>2019.10.22</span></li>
+							</ul>
+							<p><a href="#"></a></p>
+						</div>
+						<div class="div">
+							<h3>채용공고</h3>	<p><a href="http://www.alio.go.kr/informationRecruit.do"><img src="./img/more.gif" alt="more"></a></p>
+							<ul>
+								<li><a href="http://www.alio.go.kr/informationRecruitView.do?seq=184213">한전KPS(주) 원자력‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationRecruitView.do?seq=184213">[창원병원] 별정직 의‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationRecruitView.do?seq=184211">경영관리부 재무회계팀 ‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationRecruitView.do?seq=184210">녹색기술센터 학생연구원‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationRecruitView.do?seq=184208">한국교통안전공단 대구경‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationRecruitView.do?seq=184214">광주과학기술원 한국문화‥</a><span>2019.10.23</span></li>
+							</ul>
+						
+						</div>
+						<div>
+							<h3>입찰공고</h3>  <p><a href="http://www.alio.go.kr/informationBid.do"><img src="./img/more.gif" alt="more"></a></p>
+							<ul>
+								<li><a href="http://www.alio.go.kr/informationBidView.do?seq=2634958">영동보수기지 업무동‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationBidView.do?seq=2634957">국방과학기술표준분류체‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationBidView.do?seq=2634956">국방기술품질원 본원 스 ‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationBidView.do?seq=2634955">[E041900536]‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationBidView.do?seq=2634954">2018년 ASRP보고‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/informationBidView.do?seq=2634953">(채무,총액,적격)KT‥</a><span>2019.10.23</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="c4"></div>
+			<div id="footer">
+				<div class="footer_wrap">				
+					<div class="f1">
+						<ul>
+							<li class="f1_list1"><a href="http://www.alio.go.kr/guideCopyright.do">저작권정책</a></li>
+							<li class="f1_list1"><a href="http://www.alio.go.kr/guideRefuse.do">이메일무단수집거부</a></li>
+							<li class="f1_list1"><a href="http://www.alio.go.kr/guidePrivate.do">개인정보처리방침</a></li>
+							<li class="f1_list2"><a href="http://www.alio.go.kr/guideJoin.do">경영개선신고센터</a></li>
+						</ul>
+					</div>
+					<div class="f2">
+						<p>
+							<img src="./img/img_bot_logo.gif" alt="기획재정부">
+						</p>
+						<address>
+							(우)30109 세종특별자치시 갈매로 477 정부세종청사 기획재정부<br>
+							Copyright ⓒ 2011 Ministry of Economy and Finance. Republic of Korea. Some Rights Reserved.
+						</address>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>	
+</html>
+

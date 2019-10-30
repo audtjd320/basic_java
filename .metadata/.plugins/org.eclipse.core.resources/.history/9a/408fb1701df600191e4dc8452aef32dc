@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>각각메뉴 슬라이드</title>
+		<style>
+			ul, li{list-style: none;}
+			a{text-decoration: none;}
+			
+			/*메뉴스타일*/
+			.dropdown{
+				position:relative;
+			}
+			.dropdown li{
+				float:left;
+			}
+			.dropdown a{
+				display: block;
+				padding: 10px 30px;
+			}
+			
+			/*서브메뉴스타일*/
+			.submenu{
+				position: absolute;
+				margin: 0;
+				overflow: hidden;
+				background:rgba(100%,20%,10%,0.2);
+			}
+			.submenu li{
+				float: left;
+			}
+			.submenu li a{
+			
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul class="dropdown">
+				<li><a href="#">사업소개1</a></li>
+				<ul class="submenu">
+					<li>서울어워드 우수상품</li>
+					<li>온라인 판로지원</li>
+					<li>하이서울 쇼룸</li>
+					<li>아이마켓서울우유 매장</li>
+				</ul>
+			</ul>
+			
+			<ul class="dropdown">
+				<li><a href="#">사업소개2</a></li>
+				<ul class="submenu">
+					<li>서울어워드 우수상품</li>
+					<li>온라인 판로지원</li>
+					<li>하이서울 쇼룸</li>
+					<li>아이마켓서울우유 매장</li>
+				</ul>
+			</ul>
+			
+			<ul class="dropdown">
+				<li><a href="#">사업소개3</a></li>
+				<ul class="submenu">
+					<li>서울어워드 우수상품</li>
+					<li>온라인 판로지원</li>
+					<li>하이서울 쇼룸</li>
+					<li>아이마켓서울우유 매장</li>
+				</ul>
+			</ul>
+			
+			<ul class="dropdown">
+				<li><a href="#">사업소개4</a></li>
+				<ul class="submenu">
+					<li>서울어워드 우수상품</li>
+					<li>온라인 판로지원</li>
+					<li>하이서울 쇼룸</li>
+					<li>아이마켓서울우유 매장</li>
+				</ul>
+			</ul>
+		</nav>
+	</body>
+</html>

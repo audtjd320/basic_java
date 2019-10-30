@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>달력</title>
+	</head>
+	<style>
+		table{
+			width : 800px;
+			border : 2px solid blue;
+			text-align: center;
+		}
+		
+		td{
+			border : 2px solid blue;
+			width :50px;
+			height:100px;
+		}
+	</style>
+	<script>
+		
+
+	
+		  
+		var today =new Date();
+		var strhtml = "";
+		
+		strhtml+="<table>";
+			//1행
+			strhtml+="<tr>";
+			
+				strhtml+="<td>" +" &lt; "+ "</td>";
+				strhtml+="<td colspan=5>" + today.getFullYear()+"년" + parseInt(today.getMonth()+1)+"월"+"</td>";	
+				strhtml+="<td>" + "&gt;" +"</td>";
+				
+			strhtml+="</tr>";
+			
+			
+			
+			//2행
+			strhtml+="<tr>";
+				strhtml+="<td>"+ "일" +"</td>";
+				strhtml+="<td>"+ "월" +"</td>";
+				strhtml+="<td>"+ "화" +"</td>";
+				strhtml+="<td>"+ "수" +"</td>";
+				strhtml+="<td>"+ "목" +"</td>";
+				strhtml+="<td>"+ "금" +"</td>";
+				strhtml+="<td>"+ "토" +"</td>";
+			
+				
+			strhtml+="</tr>";
+		
+		
+		var year = new Date().getFullYear();
+		var month = new Date().getMonth() * 1 + 1;
+		
+		var lastDate = new Date(year,month,0).getDate(); 
+		var firstDay = new Date(year,month,1).getDay();
+		
+		alert(lastDate);
+		
+		//var firstDate = new Date(now.get)
+		//날짜부분
+		for(var i = 0; i <= firstDay + lastDate; i++){
+			if(i % 7 == 0){
+				strhtml += "<tr>";
+			}
+			
+			if(i < firstDay){
+				strhtml += "<td>"+"</td>";
+			}else if(i>0){
+				strhtml += "<td>";
+				strhtml += i -firstDay +1;
+				strhtml += "</td>";
+			}
+			
+			
+			if(i % 7 == 6){
+				strhtml += "</tr>";
+			}   
+		}	
+		
+		
+		
+		strhtml+="</table>";
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		window.onload = function (){
+			document.getElementById("result").innerHTML = strhtml; 
+		}
+		 
+	</script>
+	<body>
+		<div id ="result"></div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

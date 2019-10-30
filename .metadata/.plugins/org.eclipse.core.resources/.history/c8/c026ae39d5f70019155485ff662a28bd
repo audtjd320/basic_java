@@ -1,0 +1,540 @@
+package data;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import service.UserServiceImpl;
+import vo.MovieVO;
+import vo.NoticeVO;
+import vo.ReserveVO;
+import vo.ReviewVO;
+import vo.SeatVO;
+import vo.ShowingVO;
+import vo.UserVO;
+
+public class Database {
+	private static Database instance;
+
+	private Database(){}
+
+	public static Database getInstance(){
+		if(instance == null){
+			instance = new Database();
+		}
+		return instance;
+	}
+
+	public ArrayList<UserVO> tb_user = new ArrayList<UserVO>();
+	
+	{
+		UserVO user = new UserVO();
+		user.setId("admin");
+		user.setPassword("admin");
+		user.setName("관리자");
+		user.setManager(true);
+		
+		tb_user.add(user);
+		
+		UserVO user2 = new UserVO();
+		
+		user2.setId("test");
+		user2.setPassword("test");
+		user2.setName("test");
+		tb_user.add(user2);
+	}
+	
+	
+	
+	public ArrayList<NoticeVO> tb_notice = new ArrayList<NoticeVO>();
+	
+	{
+		NoticeVO notice1 = new NoticeVO();
+		notice1.setTitle("1번 공지사항");
+		notice1.setContents("1번 내용");
+		tb_notice.add(notice1);
+		
+		NoticeVO notice2 = new NoticeVO();
+		notice2.setTitle("2번 공지사항");
+		notice2.setContents("2번 내용");
+		tb_notice.add(notice2);
+	}
+	
+	public ArrayList<MovieVO> tb_movie = new ArrayList<MovieVO>();
+	
+	{
+		MovieVO movie = new MovieVO();
+		movie.setMovieCode(1);
+		movie.setMovieName("말레피센트");
+		movie.setRunTime(120);
+		movie.setDirector("요아킴 뢰닝");
+		movie.setScore(7.6);
+		movie.setActors("안젤리나 졸리");
+		movie.setAgeLimit(15);
+		movie.setStory("강력한 어둠의 지배자이자 무어스 숲의 수호자 ‘말레피센트’는 딸처럼 돌봐온\r\t\t\t\t\t\t\t\t\t\t\t\t\t\t‘"
+				+ "오로라’와 ‘필립 왕자’의  결혼 약속으로 인간 세계의 ‘잉그리스 왕비’와 대립하게 된다.");
+		tb_movie.add(movie);
+		
+		MovieVO mv = new MovieVO();
+		mv.setMovieCode(2);
+		mv.setMovieName("조   커");
+		mv.setRunTime(120);
+		mv.setDirector("토드 필립스");
+		mv.setScore(9.0);
+		mv.setActors("호아킨 피닉스");
+		mv.setAgeLimit(15);
+		mv.setStory("고담시의 광대 아서 플렉은 코미디언을 꿈꾸는 남자 하지만 모두가 미쳐가는\r\t\t\t\t\t\t\t\t\t\t\t\t"
+				+ "코미디 같은 세상에서 맨 정신으로는 그가 설 자리가 없음을 깨닫게 되는데\r\t\t\t\t\t\t\t\t\t\t\t\t"
+				+ "이제껏 본 적 없는 진짜 ‘조커’를 만나라!");
+		tb_movie.add(mv);
+		
+		MovieVO mv2 = new MovieVO();
+		mv2.setMovieCode(3);
+		mv2.setMovieName("나쁜녀석들");
+		mv2.setRunTime(120);
+		mv2.setDirector("토드 필립스");
+		mv2.setScore(9.0);
+		mv2.setActors("호아킨 피닉스");
+		mv2.setAgeLimit(15);
+		mv2.setStory("고담시의 광대 아서 플렉은 코미디언을 꿈꾸는 남자 하지만 모두가 미쳐가는\r\t\t\t\t\t\t\t\t\t\t\t\t"
+				+ "코미디 같은 세상에서 맨 정신으로는 그가 설 자리가 없음을 깨닫게 되는데\r\t\t\t\t\t\t\t\t\t\t\t\t"
+				+ "이제껏 본 적 없는 진짜 ‘조커’를 만나라!");
+		tb_movie.add(mv);
+	}
+	
+	public ArrayList<ReserveVO> tb_reserve = new ArrayList<ReserveVO>();
+	
+	{
+		
+		ReserveVO rv1 = new ReserveVO();
+		rv1.setReserveCode(1);
+		rv1.setSeatCode(1);
+		rv1.setShowingCode(2);
+		rv1.setUserID("test"); 
+		tb_reserve.add(rv1);
+		
+		ReserveVO rv2 = new ReserveVO();
+		rv2.setReserveCode(2);
+		rv2.setSeatCode(5);
+		rv2.setShowingCode(2);
+		rv2.setUserID("test");
+		tb_reserve.add(rv2);
+
+	}
+	
+	public ArrayList<ReviewVO> tb_review = new ArrayList<ReviewVO>();
+	{
+		ReviewVO rv = new ReviewVO();
+		rv.setReviewCode(1);
+		rv.setContents("너무 재밌어요. 시간가는줄 몰랐네요.");
+		rv.setScore(9);
+		tb_review.add(rv);
+	}
+	
+	///동규꺼
+	public ArrayList<ShowingVO> tb_showing = new ArrayList<ShowingVO>();
+	{
+		// 시연할때는 이 소스 삭제
+		Date day = new Date();
+		SimpleDateFormat format = new SimpleDateFormat("MM월dd일");
+		String today = format.format(day);
+		String tomorrow = format.format(day.getTime() + (long)( 1000 * 60 * 60 * 24 ));
+		String tomorrow1 = format.format(day.getTime() + (long)( 1000 * 60 * 60 * 48));
+		// 시연할때는 이 소스 삭제
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//오늘
+		//12:40분
+		ShowingVO sv = new ShowingVO();
+		sv.setShowingCode(1);
+		sv.setMovieCode(1);
+		sv.setScreen(1);
+		sv.setDate(today);
+		sv.setTime("12:40");
+		
+		tb_showing.add(sv);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//오늘
+		//14:50분
+		ShowingVO sv2 = new ShowingVO();
+		sv2.setShowingCode(2);
+		sv2.setMovieCode(1);
+		sv2.setScreen(1);
+		sv2.setDate(today);
+		sv2.setTime("14:50");
+		
+		tb_showing.add(sv2);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//오늘
+		//17:00분
+		ShowingVO sv3 = new ShowingVO();
+		sv3.setShowingCode(3);
+		sv3.setMovieCode(1);
+		sv3.setScreen(1);
+		sv3.setDate(today);
+		sv3.setTime("17:00");
+		
+		tb_showing.add(sv3);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//내일
+		//12:40분
+		ShowingVO sv4 = new ShowingVO();
+		sv4.setShowingCode(4);
+		sv4.setMovieCode(1);
+		sv4.setScreen(1);
+		sv4.setDate(tomorrow);
+		sv4.setTime("12:40");
+		
+		tb_showing.add(sv4);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//내일
+		//14:50분
+		ShowingVO sv5 = new ShowingVO();
+		sv5.setShowingCode(5);
+		sv5.setMovieCode(1);
+		sv5.setScreen(1);
+		sv5.setDate(tomorrow);
+		sv5.setTime("14:50");
+		
+		tb_showing.add(sv5);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//내일
+		//17:00분
+		ShowingVO sv6 = new ShowingVO();
+		sv6.setShowingCode(6);
+		sv6.setMovieCode(1);
+		sv6.setScreen(1);
+		sv6.setDate(tomorrow);
+		sv6.setTime("17:00");
+		
+		tb_showing.add(sv6);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//내일모레
+		//12:40분
+		ShowingVO sv7 = new ShowingVO();
+		sv7.setShowingCode(7);
+		sv7.setMovieCode(1);
+		sv7.setScreen(1);
+		sv7.setDate(tomorrow1);
+		sv7.setTime("12:40");
+		
+		tb_showing.add(sv7);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//내일모레
+		//14:50분
+		ShowingVO sv8 = new ShowingVO();
+		sv8.setShowingCode(8);
+		sv8.setMovieCode(1);
+		sv8.setScreen(1);
+		sv8.setDate(tomorrow1);
+		sv8.setTime("14:50");
+		
+		tb_showing.add(sv8);
+		
+		//영화1번 말레피센트
+		//상영관 1관
+		//내일모레
+		//17:00분
+		ShowingVO sv9 = new ShowingVO();
+		sv9.setShowingCode(9);
+		sv9.setMovieCode(1);
+		sv9.setScreen(1);
+		sv9.setDate(tomorrow1);
+		sv9.setTime("17:00");
+		
+		tb_showing.add(sv9);
+	}
+	
+	
+	public ArrayList<SeatVO> tb_seat= new ArrayList<SeatVO>();
+	{
+		
+		
+		SeatVO sv1 = new SeatVO();
+		sv1.setSeatCode(1);
+		sv1.setSeatNum("H1");
+		sv1.setScreen(1);
+		tb_seat.add(sv1);
+		
+		SeatVO sv2 = new SeatVO();
+		sv2.setSeatCode(2);
+		sv2.setSeatNum("H2");
+		sv2.setScreen(1);
+		tb_seat.add(sv2);
+		
+		SeatVO sv3 = new SeatVO();
+		sv3.setSeatCode(3);
+		sv3.setSeatNum("H3");
+		sv3.setScreen(1);
+		tb_seat.add(sv3);
+		
+		SeatVO sv4 = new SeatVO();
+		sv4.setSeatCode(4);
+		sv4.setSeatNum("H4");
+		sv4.setScreen(1);
+		tb_seat.add(sv4);
+		
+		SeatVO sv5 = new SeatVO();
+		sv5.setSeatCode(5);
+		sv5.setSeatNum("H5");
+		sv5.setScreen(1);
+		tb_seat.add(sv5);
+		
+		SeatVO sv6 = new SeatVO();
+		sv6.setSeatCode(6);
+		sv6.setSeatNum("H6");
+		sv6.setScreen(1);
+		tb_seat.add(sv6);
+		
+		SeatVO sv7 = new SeatVO();
+		sv7.setSeatCode(7);
+		sv7.setSeatNum("H7");
+		sv7.setScreen(1);
+		tb_seat.add(sv7);
+		
+		SeatVO sv8 = new SeatVO();
+		sv8.setSeatCode(8);
+		sv8.setSeatNum("H8");
+		sv8.setScreen(1);
+		tb_seat.add(sv8);
+		
+		SeatVO sv9 = new SeatVO();
+		sv9.setSeatCode(9);
+		sv9.setSeatNum("H9");
+		sv9.setScreen(1);
+		tb_seat.add(sv9);
+		
+		SeatVO sv10 = new SeatVO();
+		sv10.setSeatCode(10);
+		sv10.setSeatNum("I1");
+		sv10.setScreen(1);
+		tb_seat.add(sv10);
+		
+		SeatVO sv11 = new SeatVO();
+		sv11.setSeatCode(11);
+		sv11.setSeatNum("I2");
+		sv11.setScreen(1);
+		tb_seat.add(sv11);
+		
+		SeatVO sv12 = new SeatVO();
+		sv12.setSeatCode(12);
+		sv12.setSeatNum("I3");
+		sv12.setScreen(1);
+		tb_seat.add(sv12);
+		
+		SeatVO sv13 = new SeatVO();
+		sv13.setSeatCode(13);
+		sv13.setSeatNum("I4");
+		sv13.setScreen(1);
+		tb_seat.add(sv13);
+		
+		SeatVO sv14 = new SeatVO();
+		sv14.setSeatCode(14);
+		sv14.setSeatNum("I5");
+		sv14.setScreen(1);
+		tb_seat.add(sv14);
+		
+		SeatVO sv15 = new SeatVO();
+		sv15.setSeatCode(15);
+		sv15.setSeatNum("I6");
+		sv15.setScreen(1);
+		tb_seat.add(sv15);
+		
+		SeatVO sv16 = new SeatVO();
+		sv16.setSeatCode(16);
+		sv16.setSeatNum("I7");
+		sv16.setScreen(1);
+		tb_seat.add(sv16);
+		
+		SeatVO sv17 = new SeatVO();
+		sv17.setSeatCode(17);
+		sv17.setSeatNum("I8");
+		sv17.setScreen(1);
+		tb_seat.add(sv17);
+		
+		SeatVO sv18 = new SeatVO();
+		sv18.setSeatCode(18);
+		sv18.setSeatNum("I9");
+		sv18.setScreen(1);
+		tb_seat.add(sv18);
+		
+		SeatVO sv19 = new SeatVO();
+		sv19.setSeatCode(19);
+		sv19.setSeatNum("J1");
+		sv19.setScreen(1);
+		tb_seat.add(sv19);
+		
+		SeatVO sv20 = new SeatVO();
+		sv20.setSeatCode(20);
+		sv20.setSeatNum("J2");
+		sv20.setScreen(1);
+		tb_seat.add(sv20);
+		
+		SeatVO sv21 = new SeatVO();
+		sv21.setSeatCode(21);
+		sv21.setSeatNum("J3");
+		sv21.setScreen(1);
+		tb_seat.add(sv21);
+		
+		SeatVO sv22 = new SeatVO();
+		sv22.setSeatCode(22);
+		sv22.setSeatNum("J4");
+		sv22.setScreen(1);
+		tb_seat.add(sv22);
+		
+		SeatVO sv23 = new SeatVO();
+		sv23.setSeatCode(23);
+		sv23.setSeatNum("J5");
+		sv23.setScreen(1);
+		tb_seat.add(sv23);
+		
+		SeatVO sv24 = new SeatVO();
+		sv24.setSeatCode(24);
+		sv24.setSeatNum("J6");
+		sv24.setScreen(1);
+		tb_seat.add(sv24);
+		
+		SeatVO sv25 = new SeatVO();
+		sv25.setSeatCode(25);
+		sv25.setSeatNum("J7");
+		sv25.setScreen(1);
+		tb_seat.add(sv25);
+		
+		SeatVO sv26 = new SeatVO();
+		sv26.setSeatCode(26);
+		sv26.setSeatNum("J8");
+		sv26.setScreen(1);
+		tb_seat.add(sv26);
+		
+		SeatVO sv27 = new SeatVO();
+		sv27.setSeatCode(27);
+		sv27.setSeatNum("J9");
+		sv27.setScreen(1);
+		tb_seat.add(sv27);
+		
+		SeatVO sv28 = new SeatVO();
+		sv28.setSeatCode(28);
+		sv28.setSeatNum("K1");
+		sv28.setScreen(1);
+		tb_seat.add(sv28);
+		
+		SeatVO sv29 = new SeatVO();
+		sv29.setSeatCode(29);
+		sv29.setSeatNum("K2");
+		sv29.setScreen(1);
+		tb_seat.add(sv29);
+		
+		SeatVO sv30 = new SeatVO();
+		sv30.setSeatCode(30);
+		sv30.setSeatNum("K3");
+		sv30.setScreen(1);
+		tb_seat.add(sv30);
+		
+		SeatVO sv31 = new SeatVO();
+		sv31.setSeatCode(31);
+		sv31.setSeatNum("K4");
+		sv31.setScreen(1);
+		tb_seat.add(sv31);
+		
+		SeatVO sv32 = new SeatVO();
+		sv32.setSeatCode(32);
+		sv32.setSeatNum("K5");
+		sv32.setScreen(1);
+		tb_seat.add(sv32);
+		
+		SeatVO sv33 = new SeatVO();
+		sv33.setSeatCode(33);
+		sv33.setSeatNum("K6");
+		sv33.setScreen(1);
+		tb_seat.add(sv33);
+		
+		SeatVO sv34 = new SeatVO();
+		sv34.setSeatCode(34);
+		sv34.setSeatNum("K7");
+		sv34.setScreen(1);
+		tb_seat.add(sv34);
+		
+		SeatVO sv35 = new SeatVO();
+		sv35.setSeatCode(35);
+		sv35.setSeatNum("K8");
+		sv35.setScreen(1);
+		tb_seat.add(sv35);
+		
+		SeatVO sv36 = new SeatVO();
+		sv36.setSeatCode(36);
+		sv36.setSeatNum("K9");
+		sv36.setScreen(1);
+		tb_seat.add(sv36);
+		
+		SeatVO sv37 = new SeatVO();
+		sv37.setSeatCode(37);
+		sv37.setSeatNum("L1");
+		sv37.setScreen(1);
+		tb_seat.add(sv37);
+		
+		SeatVO sv38 = new SeatVO();
+		sv38.setSeatCode(38);
+		sv38.setSeatNum("L2");
+		sv38.setScreen(1);
+		tb_seat.add(sv38);
+		
+		SeatVO sv39 = new SeatVO();
+		sv39.setSeatCode(39);
+		sv39.setSeatNum("L3");
+		sv39.setScreen(1);
+		tb_seat.add(sv39);
+		
+		SeatVO sv40 = new SeatVO();
+		sv40.setSeatCode(40);
+		sv40.setSeatNum("L4");
+		sv40.setScreen(1);
+		tb_seat.add(sv40);
+		
+		SeatVO sv41 = new SeatVO();
+		sv41.setSeatCode(41);
+		sv41.setSeatNum("L5");
+		sv41.setScreen(1);
+		tb_seat.add(sv41);
+		
+		SeatVO sv42 = new SeatVO();
+		sv42.setSeatCode(42);
+		sv42.setSeatNum("L6");
+		sv42.setScreen(1);
+		tb_seat.add(sv42);
+		
+		SeatVO sv43 = new SeatVO();
+		sv43.setSeatCode(43);
+		sv43.setSeatNum("L7");
+		sv43.setScreen(1);
+		tb_seat.add(sv43);
+		
+		SeatVO sv44 = new SeatVO();
+		sv44.setSeatCode(44);
+		sv44.setSeatNum("L8");
+		sv44.setScreen(1);
+		tb_seat.add(sv44);
+		
+		SeatVO sv45 = new SeatVO();
+		sv45.setSeatCode(45);
+		sv45.setSeatNum("L9");
+		sv45.setScreen(1);
+		tb_seat.add(sv45);
+		
+		
+	}
+}

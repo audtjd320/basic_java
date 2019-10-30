@@ -1,0 +1,45 @@
+package service;
+
+public interface UserService {
+	
+	void join(); // 회원가입
+	
+	void login(); // 로그인
+	
+	void managerLogin(); // 관리자 로그인
+	
+	void userLogin(); // 관리자 로그인
+	
+	void userList(); // 회원 전체 목록 출력
+	
+	void manageMovie(); // 영화 관리
+	
+	void insertMovie(); // 영화 등록
+	
+	void deleteMovie(); // 영화 삭제
+	
+	void selectMovie(); // 영화 목록
+	
+	void manageNotice(); // 공지사항 관리
+	
+	void insertNotice(); // 공지사항 등록
+	
+	void deleteNotice(); // 공지사항 삭제
+	
+	void selectNotice(); // 공지사항 목록
+
+	void printMovie(); // 영화 출력
+	
+	void reserveMovie(); // 영화 예매
+	
+	void reserveList(); // 예매 내역
+	
+	void review(); // 평점 및 리뷰
+	
+	void myPage(); // 마이페이지
+
+	void choiceMovie(); //영화 선택
+	
+	void choice();
+	
+}

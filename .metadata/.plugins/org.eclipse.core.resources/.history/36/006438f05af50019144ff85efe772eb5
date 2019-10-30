@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>main</title>
+		<link rel="stylesheet" type="text/css" href="./css/css.css">
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="headerWrap">
+				<div id="header">
+					<div id="leftHeader">
+						<ul>
+							<li><a href="#">기획재정부</a></li>
+							<li><a href="#">JOB-ALIO</a></li>
+							<li><a href="#">ALIOPLUS</a></li>
+						</ul>
+					</div>
+					<div id="rightHeader">
+						<ul>
+							<li><a href="#">글자크기 </a><img src="./img/btn_font_up.gif"><img src="./img/btn_font_basics.gif"><img src="./img/btn_font_down.gif"></li>
+							<li><a href="#">HOME</a></li>
+							<li><a href="#">사이트맵</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="nav">
+					<div id="navLogo">
+						<img src="./img/img_top_logo.gif">
+					</div>
+					<div id="navList">
+						<ul>
+							<li><a href="#">알리오안내</a></li>
+							<li><a href="#">경영공시</a></li>
+							<li><a href="#">통계</a></li>
+							<li><a href="#">기타정보</a></li>
+						</ul>
+					</div>
+					<div id="navSearch">
+						<input type="text">
+						<img src="./img/btn_search.gif">
+					</div>
+				</div>
+			</div>
+			<div id="contents">
+				<div id="c1"><img src="./img/main_02.jpeg"></div>
+				<div id="c2">
+					<div class="c2_wrap">
+						<ul>
+							<li class="c2_list1"><img src="./img/항목별 공시.png"></li>
+							<li class="c2_list"><img src="./img/기관별 공시.png"></li>
+							<li class="c2_list"><img src="./img/통계검색.png"></li>
+							<li class="c2_list"><img src="./img/공공기관 현황.png"></li>
+							<li class="c2_list2">
+								<img src="./img/알리오플러스.png" class="img1">
+								<img src="./img/icon_n06.gif" class="img2">
+								
+							</li>
+							<li class="c2_list3"><img src="./img/부패행위 채용비리신고.gif" alt="부패"></li>
+						</ul>
+					</div>
+				</div>
+				<div id="c3">
+					<div id="section1"></div>
+					<div id="section2"></div>
+				</div>
+			</div>
+			
+			<div id="footer">
+				<div id="footer_wrap">				
+					<div id="f1"></div>
+					<div id="f2"></div>
+				</div>
+			</div>
+		</div>
+	</body>	
+</html>
+

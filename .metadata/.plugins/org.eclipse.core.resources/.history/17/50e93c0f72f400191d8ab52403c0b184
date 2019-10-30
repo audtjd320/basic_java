@@ -1,0 +1,67 @@
+package vo;
+
+import java.util.Date;
+
+public class UserVO {
+	private String id;
+	private String password;
+	private String name;
+	private String birthdate;
+	private boolean isManager;
+	
+	//생년원일
+	public String getBirthdate() {
+		return birthdate;
+	}
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
+	}
+	
+	//관리자 여부
+	public boolean isManager() {
+		return isManager;
+	}
+	
+	public void setManager(boolean isManager) {
+		this.isManager = isManager;
+	}
+	
+	//아이디(정규식 체크)
+	public String getId() {
+		return id;
+	}
+	public boolean setId(String id) {
+		if(RegEx.regId(id)){
+			this.id = id;
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	//비밀번호
+	public String getPassword() {
+		return password;
+	}
+	public boolean setPassword(String password) {
+		if(RegEx.regPw(password)){
+			this.password = password;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	//이름
+	public String getName() {
+		return name;
+	}
+	public boolean setName(String name) {
+		if(RegEx.regName(name)){
+			this.name = name;
+			return true;
+		}else{
+			return false;
+		}
+	}
+}

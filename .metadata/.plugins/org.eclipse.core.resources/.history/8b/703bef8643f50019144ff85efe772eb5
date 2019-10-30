@@ -1,0 +1,84 @@
+package data;
+
+import java.util.ArrayList;
+
+import service.UserServiceImpl;
+import vo.MovieVO;
+import vo.NoticeVO;
+import vo.UserVO;
+
+public class Database {
+	private static Database instance;
+
+	private Database(){}
+
+	public static Database getInstance(){
+		if(instance == null){
+			instance = new Database();
+		}
+		return instance;
+	}
+
+	public ArrayList<UserVO> tb_user = new ArrayList<UserVO>();
+	
+	{
+		UserVO user = new UserVO();
+		user.setId("admin");
+		user.setPassword("admin");
+		user.setName("관리자");
+		user.setManager(true);
+		
+		tb_user.add(user);
+		
+		UserVO user2 = new UserVO();
+		
+		user2.setId("test");
+		user2.setPassword("test");
+		user2.setName("test");
+		tb_user.add(user2);
+	}
+	
+	
+	
+	public ArrayList<NoticeVO> tb_notice = new ArrayList<NoticeVO>();
+	
+	{
+		NoticeVO notice1 = new NoticeVO();
+		notice1.setTitle("1번공지사항");
+		notice1.setContents("1번내용");
+		NoticeVO notice2 = new NoticeVO();
+		notice2.setTitle("2번공지사항");
+		notice2.setContents("2번내용");
+		
+	}
+	
+	public ArrayList<MovieVO> tb_movie = new ArrayList<MovieVO>();
+	
+	{
+		MovieVO movie = new MovieVO();
+		movie.setMovieCode(1);
+		movie.setMovieName("말레피센트");
+		movie.setRunTime(120);
+		movie.setDirector("요아킴 뢰닝");
+		movie.setScore(7.6);
+		movie.setActors("안젤리나 졸리");
+		movie.setAgeLimit(15);
+		movie.setStory("강력한 어둠의 지배자이자 무어스 숲의 수호자 ‘말레피센트’는 딸처럼 돌봐온\r\t\t\t\t\t\t\t\t\t\t\t\t\t\t‘"
+				+ "오로라’와 ‘필립 왕자’의  결혼 약속으로 인간 세계의 ‘잉그리스 왕비’와 대립하게 된다.");
+		tb_movie.add(movie);
+		
+		MovieVO mv = new MovieVO();
+		mv.setMovieCode(2);
+		mv.setMovieName("조커");
+		mv.setRunTime(120);
+		mv.setDirector("토드 필립스");
+		mv.setScore(9.0);
+		mv.setActors("호아킨 피닉스");
+		mv.setAgeLimit(15);
+		mv.setStory("고담시의 광대 아서 플렉은 코미디언을 꿈꾸는 남자 하지만 모두가 미쳐가는\r\t\t\t\t\t\t\t\t\t\t\t\t"
+				+ "코미디 같은 세상에서 맨 정신으로는 그가 설 자리가 없음을 깨닫게 되는데\r\t\t\t\t\t\t\t\t\t\t\t\t"
+				+ "이제껏 본 적 없는 진짜 ‘조커’를 만나라!");
+		
+		tb_movie.add(mv);
+	}
+}

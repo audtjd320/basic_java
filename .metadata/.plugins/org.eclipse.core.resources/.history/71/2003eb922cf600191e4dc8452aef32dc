@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>main</title>
+		<link rel="stylesheet" type="text/css" href="./css/css.css">
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="headerWrap">
+				<div id="header">
+					<div id="leftHeader">
+						<ul>
+							<li><a href="#">&nbsp;&nbsp;기획재정부</a></li>
+							<li><a href="#">&nbsp;&nbsp;JOB-ALIO</a></li>
+							<li class="lastLeftHeader"><a href="#">&nbsp;&nbsp;ALIOPLUS</a></li>
+						</ul>
+					</div>
+					<div id="rightHeader">
+						<ul>
+							<li><span>글자크기&nbsp;</span><img src="./img/btn_font_up.gif"><img src="./img/btn_font_basics.gif"><img src="./img/btn_font_down.gif"></li>
+							<li class="lastRightHeader"><a href="#">HOME</a></li>
+							<li class="lastRightHeader"><a href="#">사이트맵</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="nav">
+					<div id="navLogo">
+						<img src="./img/img_top_logo.gif">
+					</div>
+					<div id="navList">
+						<ul>
+							<li class="nav_list2"><a href="#">알리오안내</a></li>
+							<li class="nav_list1"><a href="#">경영공시</a></li>
+							<li class="nav_list1"><a href="#">통계</a></li>
+							<li class="nav_list1"><a href="#">기타정보</a></li>
+						</ul>
+					</div>
+					<div id="navSearch">
+						<input type="text">
+						<img src="./img/btn_search.gif">
+					</div>
+				</div>
+			</div>
+			<div id="contents">
+				<div id="c1"><img src="./img/main_02.jpeg"></div>
+				<div id="c2">
+					<div class="c2_wrap">
+						<ul>
+							<li class="c2_list1"><img src="./img/항목별 공시.png"></li>
+							<li class="c2_list"><img src="./img/기관별 공시.png"></li>
+							<li class="c2_list"><img src="./img/통계검색.png"></li>
+							<li class="c2_list"><img src="./img/공공기관 현황.png"></li>
+							<li class="c2_list2">
+								<img src="./img/알리오플러스.png" class="img1">
+								<img src="./img/icon_n06.gif" class="img2">
+								
+							</li>
+							<li class="c2_list3"><img src="./img/부패행위 채용비리신고.gif" alt="부패"></li>
+						</ul>
+					</div>
+				</div>
+				<div id="c3">
+					<div id="section1">
+						<img src="./img/crossline_02.png">
+						<ul>
+							<li><a href="http://www.alio.go.kr/statisticsStat1.do" target="_self"><img src="./img/임직원현황.png"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat3.do" target="_self"><img src="./img/신규채용현황.png"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat4.do" target="_self"><img src="./img/임원평균연봉.png"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat5.do" target="_self"><img src="./img/직원평균보수.png"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat6.do" target="_self"><img src="./img/복리후생비.png"></a></li>
+							<li><a href="http://www.alio.go.kr/statisticsStat7.do" target="_self"><img src="./img/부채정보.png"></a></li>
+						</ul>
+					</div>
+					<div id="section2">
+						<div class="div">
+							<h3>최근공시</h3>  <p><a href="http://www.alio.go.kr/managementToday.do"><img src="./img/more.gif"></a></p>
+							<ul>
+								<li><a href="#">제34차 핵안보자문회의 ‥</a><span>2019.10.22</span></li>
+								<li><a href="#">임원 국외출장정보(상임‥</a><span>2019.10.22</span></li>
+								<li><a href="#">클린사업장 조성지원사업‥</a><span>2019.10.22</span></li>
+								<li><a href="#">제127차 이사회 회의‥</a><span>2019.10.22</span></li>
+								<li><a href="#">2019년도 제10회 ‥</a><span>2019.10.22</span></li>
+								<li><a href="#">2019년 제3차 노사‥</a><span>2019.10.22</span></li>
+							</ul>
+							<p><a href="#"></a></p>
+						</div>
+						<div class="div">
+							<h3>채용공고</h3>	<p><a href="#"><img src="./img/more.gif"></a></p>
+							<ul>
+								<li><a href="#">한전KPS(주) 원자력‥</a><span>2019.10.23</span></li>
+								<li><a href="#">[창원병원] 별정직 의‥</a><span>2019.10.23</span></li>
+								<li><a href="#">경영관리부 재무회계팀 ‥</a><span>2019.10.23</span></li>
+								<li><a href="#">녹색기술센터 학생연구원‥</a><span>2019.10.23</span></li>
+								<li><a href="#">한국교통안전공단 대구경‥</a><span>2019.10.23</span></li>
+								<li><a href="http://www.alio.go.kr/popReport.do?seq=2019102401917201&disclosureNo=2019102401917201" target="_blank">광주과학기술원 한국문화‥</a><span>2019.10.23</span></li>
+							</ul>
+						
+						</div>
+						<div>
+							<h3>입찰공고</h3>  <p><a href="#"><img src="./img/more.gif"></a></p>
+							<ul>
+								<li><a href="#">영동보수기지 업무동‥</a><span>2019.10.23</span></li>
+								<li><a href="#">국방과학기술표준분류체‥</a><span>2019.10.23</span></li>
+								<li><a href="#">국방기술품질원 본원 스 ‥</a><span>2019.10.23</span></li>
+								<li><a href="#">[E041900536]‥</a><span>2019.10.23</span></li>
+								<li><a href="#">2018년 ASRP보고‥</a><span>2019.10.23</span></li>
+								<li><a href="#">(채무,총액,적격)KT‥</a><span>2019.10.23</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="c4"></div>
+			<div id="footer">
+				<div class="footer_wrap">				
+					<div class="f1">
+						<ul>
+							<li class="f1_list1">저작권정책</li>
+							<li class="f1_list1">이메일무단수집거부</li>
+							<li class="f1_list1">개인정보처리방침</li>
+							<li class="f1_list2">경영개선신고센터</li>
+						</ul>
+					</div>
+					<div class="f2">
+						<p>
+							<img src="./img/img_bot_logo.gif" alt="기획재정부">
+						</p>
+						<address>
+							(우)30109 세종특별자치시 갈매로 477 정부세종청사 기획재정부<br>
+							Copyright ⓒ 2011 Ministry of Economy and Finance. Republic of Korea. Some Rights Reserved.
+						</address>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>	
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>main</title>
+		<link rel="stylesheet" type="text/css" href="./css/css.css">
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="headerWrap">
+				<div id="header"></div>
+				<div id="nav"></div>
+			</div>
+			<div id="contents">
+				<div id="c1"><img src="./img/main_02.jpeg"></div>
+				<div id="c2">
+					<div class="c2_wrap">
+						<ul>
+							<li class="c2_list"><img src="./img/항목별 공시.png"></li>
+							<li class="c2_list"><img src="./img/기관별 공시.png"></li>
+							<li class="c2_list"><img src="./img/통계검색.png"></li>
+							<li class="c2_list"><img src="./img/공공기관 현황.png"></li>
+							<li class="c2_list2"><img src="./img/알리오플러스.png"></li>
+							<li class="c2_list3"><img src="./img/부패행위 채용비리신고.gif" alt="부패"></li>
+						</ul>
+					</div>
+				</div>
+				<div id="c3">
+					<div id="section1"></div>
+					<div id="section2"></div>
+				</div>
+			</div>
+			
+			<div id="footer">
+				<div id="f1"></div>
+				<div id="f2"></div>
+			</div>
+		</div>
+	</body>	
+</html>
